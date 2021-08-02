@@ -18,6 +18,7 @@ const AuthForm = ({ flag }) => {
 
   const emailLc = useSelector(getEmail);
   const handleSubmit = async (credentials) => {
+ 
     if(flag === 'login') {
       dispatch(await asyncSignIn(credentials));
     } else if(flag === 'registration') {

@@ -23,8 +23,8 @@ const postSignInUser = async credentials => {
 
 const postSignOut = async () => await axios.post(`/users/logout`);
 
-const postAddNewProject = async project => {
-  const { data } = await axios.post(`/projects`, project);
+const postAddNewProject = async body => {
+  const data = await axios.post(`/projects`, body);
   return data;
 };
 

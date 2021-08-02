@@ -22,7 +22,7 @@ const asyncSignOut = () => async dispatch => {
     dispatch(actionIsLoading(false));
     check === true &&
       toast.info(`👋 Goodby!`, {
-        position: 'bottom-right',
+        position: 'bottom-left',
         autoClose: 5000,
         hideProgressBar: false,
         closeOnClick: true,
@@ -32,7 +32,7 @@ const asyncSignOut = () => async dispatch => {
       });
     check === false &&
       toast.error('🚀 Server error!', {
-        position: 'bottom-right',
+        position: 'bottom-left',
         autoClose: 3000,
         hideProgressBar: false,
         closeOnClick: true,

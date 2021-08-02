@@ -8,10 +8,11 @@ import {
   asyncOperationRemoveProject,
   asyncOperationUpdateProject,
 } from '../../redux/projects/operations';
+import  ProjectAdd  from './ProjectAdd/ProjectAdd'
 
 
 
-const ContactTable = () => {
+const ProjectTable = () => {
   const projects = useSelector(getProjectsMemo);
 
   const dispatch = useDispatch();
@@ -24,12 +25,13 @@ const ContactTable = () => {
     
   
 
-  return projects.length !== 0 ? (
+  return( <>
+  <ProjectAdd/>
     <ul>
-        {projects.map((el, i) => {
-          return (<li>{i}</li>)
-        })}
-    </ul>) : null;
+      {projects.length&& 
+        projects.map((el) => <li>{el}</li>)}
+    </ul>
+    </>);
 };
 
-export default ContactTable;
+export default ProjectTable;
