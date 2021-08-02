@@ -1,0 +1,73 @@
+.contact_table {
+  text-align: center;
+  padding: 26px 0;
+  font-family: 'Mate SC', serif;
+  display: flex;
+  justify-content: space-around;
+  font-size: 20px;
+  border-collapse: separate;
+  border-spacing: 10px 16px;
+}
+
+.contact_name {
+  color: rgb(70, 250, 15);
+  border: solid 2px transparent;
+  border-bottom: solid 2px #33c9f7;
+  border-radius: 10px;
+  position: relative;
+  width: 160px;
+}
+.contact_name:hover {
+  border: solid 2px #33c9f7;
+}
+.contact_number {
+  width: 160px;
+  color: white;
+  border: solid 2px transparent;
+  border-bottom: solid 2px #c815ec;
+  border-radius: 10px;
+  position: relative;
+}
+.contact_number:hover {
+  border: solid 2px #c815ec;
+}
+
+.input_hidden {
+  display: block;
+  visibility: hidden;
+  height: 0;
+}
+.input_active {
+  visibility: visible;
+  background-image: linear-gradient(45deg, #33c9f7, #c815ec);
+  display: block;
+  position: absolute;
+  left: 0;
+  padding-left: 8px;
+  top: 0px;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  max-width: 100%;
+  height: auto;
+  border: solid 2px white;
+  color: rgb(250, 250, 250);
+}
+
+.contact_update {
+  cursor: pointer;
+  background-color: rgb(12, 247, 63);
+  color: white;
+  border-radius: 10px;
+  border: solid 2px white;
+  width: 80px;
+}
+
+.contact_delete {
+  cursor: pointer;
+  background-color: rgb(247, 47, 12);
+  color: white;
+  border-radius: 10px;
+  border: solid 2px white;
+  width: 80px;
+}
