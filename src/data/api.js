@@ -24,7 +24,9 @@ const postSignInUser = async credentials => {
 const postSignOut = async () => await axios.post(`/users/logout`);
 
 const postAddNewProject = async body => {
-  const data = await axios.post(`/projects`, body);
+  const {
+    data: { data },
+  } = await axios.post(`/projects`, body);
   return data;
 };
 
@@ -35,7 +37,9 @@ const postUpdateProject = async (id, project) => {
   return data;
 };
 const getAllProjects = async () => {
-  const { data } = await axios.get(`/projects`);
+  const {
+    data: { data },
+  } = await axios.get(`/projects`);
   return data;
 };
 

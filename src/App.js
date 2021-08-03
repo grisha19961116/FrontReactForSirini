@@ -8,9 +8,9 @@ import { getLoad } from 'redux/loading/selectors';
 import style from './App.module.css';
 import { managerToken } from 'data/api';
 
-const ProjectTables = lazy(() =>
+const ProjectList = lazy(() =>
   import(
-    './components/ProjectTables/ProjectTables.jsx' /* webpackChunkName: "ProjectTables" */
+    './components/ProjectTables/ProjectList.jsx' /* webpackChunkName: "ProjectList" */
   ),
 );
 
@@ -61,7 +61,7 @@ function App() {
           </Route>
 
           <Route exact path="/projects">
-            {token ? <ProjectTables /> : <Redirect to={'/auth'} />}
+            {token ? <ProjectList /> : <Redirect to={'/auth'} />}
           </Route>
         </Switch>
       </div>

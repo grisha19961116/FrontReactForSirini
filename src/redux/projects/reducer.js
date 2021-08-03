@@ -10,26 +10,27 @@ import {
 const reducerProjects = createReducer([], {
   [actionUpdateProject]: (state, { payload }) => {
     let index;
-    state.find((contact, i) => {
-      if (contact.id === payload.id) index = i;
+    state.find((project, i) => {
+      if (project.id === payload.id) index = i;
     });
-    const contactUpdate = [...state];
-    contactUpdate[index] = payload;
-    return contactUpdate;
+    const projectUpdate = [...state];
+    projectUpdate[index] = payload;
+    return projectUpdate;
   },
 
   [actionAddProject]: (state, { payload }) => {
-    const contactsAdd = [...state, payload];
-    return contactsAdd;
+    const projectsAdd = [...state, payload];
+    return projectsAdd;
   },
 
   [actionRemoveProject]: (state, { payload }) => {
-    const contactsRemove = [...state.filter(contact => contact.id !== payload)];
-    return contactsRemove;
+    const projectRemove = [...state.filter(project => project.id !== payload)];
+    return projectRemove;
   },
 
-  [actionGetProjects]: (_, { payload }) => {
-    return payload;
+  [actionGetProjects]: (state, { payload }) => {
+    const projectsGet = [...state, ...payload];
+    return projectsGet;
   },
 });
 

@@ -41,8 +41,8 @@ const asyncOperationGetProjects = () => async dispatch => {
 const asyncOperationAddProject = project => async dispatch => {
   try {
     dispatch(actionIsLoading(true));
-    const data = await postAddNewProject(project);
-    dispatch(actionAddProject(data));
+    const { dataValues } = await postAddNewProject(project);
+    dispatch(actionAddProject(dataValues));
   } catch (err) {
     errLogger(err);
   } finally {

@@ -1,21 +1,28 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { useState, createRef } from 'react';
+import { useEffect } from 'react';
 
-import style from './ProjectTables.module.css';
+import s from './ProjectList.module.css';
 
 import { getProjectsMemo} from '../../redux/projects/selectors';
 import {
   asyncOperationRemoveProject,
   asyncOperationUpdateProject,
+  asyncOperationGetProjects
 } from '../../redux/projects/operations';
 import  ProjectAdd  from './ProjectAdd/ProjectAdd'
 
 
 
-const ProjectTable = () => {
-  const projects = useSelector(getProjectsMemo);
 
+const ProjectList = () => {
+  const projects = useSelector(getProjectsMemo);
   const dispatch = useDispatch();
+  useEffect(() => {
+    (async function (){
+      dispatch(await asyncOperationGetProjects())
+    })()
+  }, [dispatch])
+
 
   const onRemove = async id => 
    dispatch(await asyncOperationRemoveProject(id));
@@ -23,15 +30,16 @@ const ProjectTable = () => {
   const onOpenUpdate = async (id, project) => 
    dispatch(await asyncOperationUpdateProject(id, project));
     
-  
+  console.log(projects)
 
   return( <>
   <ProjectAdd/>
     <ul>
-      {projects.length&& 
-        projects.map((el) => <li>{el}</li>)}
+      {projects.length > 0 &&projects.map((el,i) => {
+        return <li key={i}>{el.name}</li>
+      })}
     </ul>
     </>);
 };
 
-export default ProjectTable;
+export default ProjectList;

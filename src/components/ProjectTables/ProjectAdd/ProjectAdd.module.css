@@ -1,0 +1,30 @@
+.project_form {
+    width: 360px;
+    min-height: 166px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-between;
+    align-items: center;
+    height: auto;
+    background-color: rgb(168, 190, 233);
+    margin: 0 auto;
+    border: solid 3px rgb(48, 49, 49);
+    border-radius: 10px;
+    padding-bottom: 10px;
+    padding-left: 6px;
+    padding-top: 3px;
+    padding-right: 2px;
+  
+  }
+  .project_input {
+    width: 100%;
+  }
+
+  .project_button {
+    width: 164px;
+    height: auto;
+  }
+  
+
+  
